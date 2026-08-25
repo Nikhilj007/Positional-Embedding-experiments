@@ -32,24 +32,26 @@ This project trains two variants of Vision Transformer (ViT) from scratch on **C
 ```
 Assignment1/
 ├── original_vit/
-│   ├── model.py          # ViT with 1D learned positional embedding
+│   ├── model.py          # ViT with 1D learned positional embedding (218 lines)
 │   ├── train.py          # Training script
 │   └── utils.py          # Data loading, augmentation, metrics
 ├── modified_vit/
-│   ├── model.py          # ViT with 2D RoPE (ONLY file that differs)
+│   ├── model.py          # ViT with 2D RoPE (ONLY file that differs) (485 lines)
 │   └── train.py          # Training script (identical logic)
 ├── compare.py            # Generate comparison plots
-├── generate_report.py    # Generate PDF report
 ├── run_original.sh       # SLURM script: train original ViT
 ├── run_modified.sh       # SLURM script: train modified ViT
 ├── run_compare.sh        # SLURM script: generate plots + report
 ├── README.md             # This file
+├── CHANGES_README.md     # Line-by-line changes: original vs modified ViT
+├── .gitignore            # Git ignore rules
 └── results/              # Output directory (created during training)
     ├── original_metrics.json
     ├── modified_metrics.json
     ├── loss_curves.png
     ├── accuracy_curves.png
-    └── report.pdf
+    ├── justification.pdf # Why 2D RoPE was chosen (≤1 page)
+    └── discussion.pdf    # Did results match expectations? (≤1 page)
 ```
 
 ---
@@ -77,7 +79,6 @@ Or run directly:
 ```bash
 conda activate hicom_bw
 python compare.py --results_dir ./results
-python generate_report.py --results_dir ./results
 ```
 
 ---
