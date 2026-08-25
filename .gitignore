@@ -5,5 +5,7 @@ data/
 __pycache__/
 *.pyc
 
+logs/
+
 # Training outputs
 results/*.pth
