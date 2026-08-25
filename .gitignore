@@ -1,0 +1,9 @@
+# Dataset
+data/
+
+# Python
+__pycache__/
+*.pyc
+
+# Training outputs
+results/*.pth
